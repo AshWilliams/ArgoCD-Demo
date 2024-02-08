@@ -1,43 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-netcore-demo
+  name: svc-mario-demo
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: netcore-demo
+    app: mario-demo
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: netcore-demo
+  name: mario-demo
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: netcore-demo
+      app: mario-demo
   template:
     metadata:
       labels:
-        app: netcore-demo
+        app: mario-demo
     spec:
       containers:
-      - name: netcore-demo
-        image: ashwilliams/netcore-upload:v8
+      - name: mario-demo
+        image: sevenajay/mario:latest 
         resources:
           limits:
             cpu: "1"
-            memory: 1G
+            memory: 2G
           requests:
-            cpu: "0.5"
-            memory: 750Mi
+            cpu: "1"
+            memory: 1G
         ports:
         - containerPort: 80
-        env:
-        - name: GitHub
-          value: "https://github.com/AshWilliams/NetCoreUpload"      
-        - name: Logo
-          value: "https://preview.redd.it/erdjqzlmlv111.png?auto=webp&s=1dfcc14e586e2aaa0ee7fb9a1bb9da6679ec892b" 

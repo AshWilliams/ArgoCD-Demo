@@ -4,7 +4,7 @@ argo:
 forward:
 	kubectl port-forward svc/argocd-server -n argocd 8080:443
 
-namespaces:
+namespace:
 	kubectl create ns aks-argo-demo
 
 demo:
