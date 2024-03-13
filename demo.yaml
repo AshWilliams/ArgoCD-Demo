@@ -26,8 +26,8 @@ spec:
     spec:
       containers:
       - name: mario-demo
-        #image: ashwilliams/netcore-upload:v8
-        image: sevenajay/mario:latest 
+        image: ashwilliams/netcore-upload:v8
+        #image: sevenajay/mario:latest 
         resources:
           limits:
             cpu: "1"

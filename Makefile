@@ -22,5 +22,8 @@ argologin:
 argoctl:
 	argocd app create mario-demo --repo https://github.com/AshWilliams/ArgoCD-Demo.git --path . --dest-server https://kubernetes.default.svc --dest-namespace aks-argo-demo
 
+argoget:
+	argocd app get mario-demo
+
 argosync:
 	argocd app sync mario-demo --prune
