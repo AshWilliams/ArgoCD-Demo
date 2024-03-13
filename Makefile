@@ -27,3 +27,6 @@ argoget:
 
 argosync:
 	argocd app sync mario-demo --prune
+
+argohist:
+	argocd app history mario-demo --max 20
