@@ -15,3 +15,12 @@ up:
 
 clean:
 	kubectl delete ns aks-argo-demo
+
+argologin:
+	argocd login 127.0.0.1:8080
+
+argoctl:
+	argocd app create mario-demo --repo https://github.com/AshWilliams/ArgoCD-Demo.git --path . --dest-server https://kubernetes.default.svc --dest-namespace aks-argo-demo
+
+argosync:
+	argocd app sync mario-demo
