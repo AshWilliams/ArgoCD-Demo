@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: mario-demo
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mario-demo
